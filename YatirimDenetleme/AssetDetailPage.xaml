@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YatirimDenetleme.AssetDetailPage"
+             BackgroundColor="#121212"
+             Title="Varlık Düzenle">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Başlık -->
+            <Label x:Name="LblBaslik" FontSize="22" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="0,10,0,0"/>
+            <Label x:Name="LblAltBilgi" FontSize="13" TextColor="#A0A0A0" HorizontalOptions="Center" Margin="0,-15,0,0"/>
+
+            <!-- Finansal Özet Kartı -->
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15">
+                <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto" RowSpacing="10">
+                    <Label Text="Yatırılan Ana Para:" TextColor="#A0A0A0" FontSize="14" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="LblAnaPara" Text="₺0.00" TextColor="White" FontAttributes="Bold" FontSize="15" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Text="Mevcut Güncel Bakiye:" TextColor="#A0A0A0" FontSize="14" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="LblGuncelBakiye" Text="₺0.00" TextColor="#3498DB" FontAttributes="Bold" FontSize="15" Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Text="Kâr / Zarar Durumu:" TextColor="#A0A0A0" FontSize="14" Grid.Row="2" Grid.Column="0"/>
+                    <Label x:Name="LblKarZarar" Text="₺0.00" TextColor="#27AE60" FontAttributes="Bold" FontSize="15" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"/>
+                </Grid>
+            </Border>
+
+            <!-- GÜNCELLEME FORMU -->
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="GÜNCEL DEĞER GİRİŞİ" TextColor="#27AE60" FontAttributes="Bold" FontSize="14"/>
+
+                    <Label x:Name="LblGirisAciklama" Text="Yeni Güncel Bakiyeyi Girin:" TextColor="#CCCCCC" FontSize="13"/>
+
+                    <Border BackgroundColor="#2A2A2A" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="12,0">
+                        <Entry x:Name="EntryGuncelDeger" Placeholder="Örn: 6500" Keyboard="Numeric" TextColor="White" FontSize="16"/>
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- İŞLEM BUTONLARI -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,10,0,0">
+                <Button Text="Güncelle" BackgroundColor="#27AE60" TextColor="White" FontAttributes="Bold" FontSize="15" Grid.Column="0" Clicked="OnGuncelleClicked"/>
+                <Button Text="Varlığı Sil" BackgroundColor="#E74C3C" TextColor="White" FontAttributes="Bold" FontSize="15" Grid.Column="1" Clicked="OnSilClicked"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

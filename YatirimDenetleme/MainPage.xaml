@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YatirimDenetleme.MainPage"
+             BackgroundColor="#121212"
+             Title="Yatırım Denetleme">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Yatırım Denetleme" FontSize="24" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="0,10,0,10"/>
+
+            <!-- Genel Özet -->
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15">
+                <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto" RowSpacing="10">
+                    <Label Text="Yatırılan Ana Para:" TextColor="#A0A0A0" FontSize="14" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="LblAnaPara" Text="₺0" TextColor="White" FontAttributes="Bold" FontSize="16" Grid.Row="0" Grid.Column="1"/>
+
+                    <Label Text="Toplam Portföy:" TextColor="#A0A0A0" FontSize="14" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="LblToplamBakiye" Text="₺0" TextColor="#27AE60" FontAttributes="Bold" FontSize="16" Grid.Row="1" Grid.Column="1"/>
+
+                    <BoxView HeightRequest="1" BackgroundColor="#2A2A2A" Grid.Row="2" Grid.ColumnSpan="2"/>
+
+                    <Label Text="Net Kar / Zarar:" TextColor="#A0A0A0" FontSize="14" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                    <Label x:Name="LblNetKarZarar" Text="₺0 (%0)" TextColor="#27AE60" FontAttributes="Bold" FontSize="16" Grid.Row="2" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Butonlar -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button Text="+ Para / Varlık Ekle" BackgroundColor="#27AE60" TextColor="White" FontAttributes="Bold" Grid.Column="0" Clicked="OnParaEkleClicked"/>
+                <Button Text="- Para Çek" BackgroundColor="#E74C3C" TextColor="White" FontAttributes="Bold" Grid.Column="1"/>
+            </Grid>
+
+            <!-- Ana Kategoriler Listesi (Tıklayınca Detay Grafiğine Gider) -->
+            <Label Text="Ana Portföy Kategorileri (Detay için tıklayın)" FontSize="14" FontAttributes="Bold" TextColor="#A0A0A0" Margin="0,10,0,0"/>
+
+            <CollectionView x:Name="CollectionViewKategoriler" SelectionMode="Single" SelectionChanged="OnKategoriSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="15" Margin="0,0,0,10">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                    <Label Text="{Binding KategoriAdi}" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                                    <Label Text="{Binding ElemanSayisi, StringFormat='{0} Kalem Yatırım'}" TextColor="#A0A0A0" FontSize="12"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1" HorizontalOptions="End" Spacing="2">
+                                    <Label Text="{Binding ToplamBakiye, StringFormat='₺{0:N2}'}" TextColor="#3498DB" FontAttributes="Bold" FontSize="16" HorizontalOptions="End"/>
+                                    <Label Text="{Binding ToplamAnaPara, StringFormat='Ana Para: ₺{0:N0}'}" TextColor="#666666" FontSize="11" HorizontalOptions="End"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- ANA GRAFİK (MAKS 3 DİLİM: Midas, Zborsa, Fiziksel) -->
+            <Label Text="Genel Portföy Dağılımı" FontSize="16" FontAttributes="Bold" TextColor="White" Margin="0,15,0,0"/>
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <GraphicsView x:Name="PieGraphicsView" HeightRequest="220" HorizontalOptions="Fill"/>
+
+                    <!-- LEGEND / RENK AÇIKLAMA KUTUSU -->
+                    <FlexLayout x:Name="LegendContainer" Wrap="Wrap" JustifyContent="SpaceAround" AlignItems="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

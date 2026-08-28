@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="YatirimDenetleme/YatirimDenetleme.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

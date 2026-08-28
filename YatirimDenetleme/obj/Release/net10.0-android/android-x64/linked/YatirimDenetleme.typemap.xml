@@ -1,0 +1,8 @@
+<api type="release" assembly-name="YatirimDenetleme" mvid="616942b9a4ed4335a3106f621b87aabd">
+  <module assembly-name="YatirimDenetleme" mvid="616942b9a4ed4335a3106f621b87aabd" mvid-bytes="uUJpYe2kNUOjEG9iG4eqvQ==">
+    <types-scratch>
+      <entry key="crc6490bafcf4310be26d/MainActivity" java-name="crc6490bafcf4310be26d/MainActivity" managed-type-name="YatirimDenetleme.MainActivity" token="33554447" />
+      <entry key="crc6490bafcf4310be26d/MainApplication" java-name="crc6490bafcf4310be26d/MainApplication" managed-type-name="YatirimDenetleme.MainApplication" token="33554448" />
+    </types-scratch>
+  </module>
+</api>

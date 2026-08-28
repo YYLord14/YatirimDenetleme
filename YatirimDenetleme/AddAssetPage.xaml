@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YatirimDenetleme.AddAssetPage"
+             BackgroundColor="#121212"
+             Title="Yeni Varlık Ekle">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Yeni Varlık / Yatırım Ekle" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="0,10,0,10"/>
+
+            <!-- 1. Aşama: Ana Kategori -->
+            <Label Text="Yatırım Kategorisi Seçin" TextColor="#A0A0A0" FontSize="14"/>
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0">
+                <Picker x:Name="PickerAnaKategori" Title="Seçiniz..." TextColor="White" TitleColor="#666666" SelectedIndexChanged="OnAnaKategoriChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Midas (ABD Borsası / Hisse)</x:String>
+                            <x:String>Zborsa (BIST / Fon)</x:String>
+                            <x:String>Fiziksel / Nakit</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Border>
+
+            <!-- 2. Aşama A: MIDAS HİSSE GİRİŞİ -->
+            <VerticalStackLayout x:Name="LayoutMidas" IsVisible="False" Spacing="15">
+                <Label Text="Hisse Adı / Sembolü" TextColor="#A0A0A0" FontSize="14"/>
+                <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                    <Entry x:Name="EntryMidasHisse" Placeholder="Örn: Apple (AAPL)" TextColor="White" PlaceholderColor="#666666"/>
+                </Border>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                    <VerticalStackLayout Grid.Column="0" Spacing="5">
+                        <Label Text="Yatırılan Tutar ($)" TextColor="#A0A0A0" FontSize="12"/>
+                        <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                            <Entry x:Name="EntryMidasDolar" Placeholder="Örn: 65" Keyboard="Numeric" TextColor="White" PlaceholderColor="#666666" TextChanged="OnMidasDolarChanged"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="5">
+                        <Label Text="Dolar Kuru (₺)" TextColor="#A0A0A0" FontSize="12"/>
+                        <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                            <Entry x:Name="EntryDolarKuru" Text="47.50" Keyboard="Numeric" TextColor="White" PlaceholderColor="#666666" TextChanged="OnMidasDolarChanged"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Border BackgroundColor="#252525" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="12">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="TL Karşılığı:" TextColor="#A0A0A0" VerticalOptions="Center"/>
+                        <Label x:Name="LblMidasTLKarsiligi" Text="₺0.00" TextColor="#27AE60" FontAttributes="Bold" FontSize="16" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+
+            <!-- 2. Aşama B: ZBORSA GİRİŞİ -->
+            <VerticalStackLayout x:Name="LayoutZborsa" IsVisible="False" Spacing="15">
+                <Label Text="Zborsa Yatırım Türü / Stratejisi" TextColor="#A0A0A0" FontSize="14"/>
+                <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0">
+                    <Picker x:Name="PickerZborsaStrateji" Title="Strateji Seçiniz..." TextColor="White" TitleColor="#666666">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Kısa Vade</x:String>
+                                <x:String>Orta Vade</x:String>
+                                <x:String>Uzun Vade</x:String>
+                                <x:String>Halka Arz</x:String>
+                                <x:String>Fon</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+                <Label Text="Yatırılan Ana Para (₺)" TextColor="#A0A0A0" FontSize="14"/>
+                <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                    <Entry x:Name="EntryZborsaTutar" Placeholder="Örn: 14000" Keyboard="Numeric" TextColor="White" PlaceholderColor="#666666"/>
+                </Border>
+            </VerticalStackLayout>
+
+            <!-- 2. Aşama C: FİZİKSEL GİRİŞİ -->
+            <VerticalStackLayout x:Name="LayoutFiziksel" IsVisible="False" Spacing="15">
+                <Label Text="Fiziksel Varlık Türü" TextColor="#A0A0A0" FontSize="14"/>
+                <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0">
+                    <Picker x:Name="PickerFizikselTur" Title="Varlık Seçiniz..." TextColor="White" TitleColor="#666666" SelectedIndexChanged="OnFizikselTurChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Altın</x:String>
+                                <x:String>Gümüş</x:String>
+                                <x:String>Dolar</x:String>
+                                <x:String>Euro</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Border>
+
+                <VerticalStackLayout x:Name="LayoutAdetKurHesaplama" IsVisible="False" Spacing="15">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Kaç Adet / Miktar?" TextColor="#A0A0A0" FontSize="12"/>
+                            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                                <Entry x:Name="EntryAdet" Placeholder="Örn: 2" Keyboard="Numeric" TextColor="White" PlaceholderColor="#666666" TextChanged="OnMiktarOrKurChanged"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5">
+                            <Label Text="Alış Kuru / Fiyatı (₺)" TextColor="#A0A0A0" FontSize="12"/>
+                            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                                <Entry x:Name="EntryAlisKuru" Placeholder="Örn: 2500" Keyboard="Numeric" TextColor="White" PlaceholderColor="#666666" TextChanged="OnMiktarOrKurChanged"/>
+                            </Border>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Border BackgroundColor="#252525" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="12">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="Hesaplanan Toplam Tutar:" TextColor="#A0A0A0" VerticalOptions="Center"/>
+                            <Label x:Name="LblOtomatikToplam" Text="₺0.00" TextColor="#27AE60" FontAttributes="Bold" FontSize="16" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout x:Name="LayoutFizikselTutar" IsVisible="False" Spacing="5">
+                    <Label Text="Yatırılan Toplam Tutar (₺)" TextColor="#A0A0A0" FontSize="14"/>
+                    <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
+                        <Entry x:Name="EntryFizikselTutar" Placeholder="Örn: 10000" Keyboard="Numeric" TextColor="White" PlaceholderColor="#666666"/>
+                    </Border>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Margin="0,20,0,0">
+                <Button Text="Kaydet" BackgroundColor="#27AE60" TextColor="White" FontAttributes="Bold" Grid.Column="0" Clicked="OnKaydetClicked"/>
+                <Button Text="İptal" BackgroundColor="#E74C3C" TextColor="White" FontAttributes="Bold" Grid.Column="1" Clicked="OnIptalClicked"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
