@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YatirimDenetleme")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9ee39aa43886b5a5e311b94f20fc232844d6178f")]
 [assembly: System.Reflection.AssemblyProductAttribute("YatirimDenetleme")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YatirimDenetleme")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -72,6 +72,10 @@
           "framework": "net10.0-android36.0",
           "targetAlias": "net10.0-android",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
             "LiveChartsCore.SkiaSharpView.Maui": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -403,6 +407,10 @@
           "framework": "net10.0-ios26.5",
           "targetAlias": "net10.0-ios",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
             "LiveChartsCore.SkiaSharpView.Maui": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -734,6 +742,10 @@
           "framework": "net10.0-maccatalyst26.5",
           "targetAlias": "net10.0-maccatalyst",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
             "LiveChartsCore.SkiaSharpView.Maui": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -1066,6 +1078,10 @@
           "framework": "net10.0-windows10.0.19041",
           "targetAlias": "net10.0-windows10.0.19041.0",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
             "LiveChartsCore.SkiaSharpView.Maui": {
               "target": "Package",
               "version": "[2.0.5, )"

@@ -3,58 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YatirimDenetleme.SubCategoryDetailPage"
              BackgroundColor="#121212"
-             x:Name="ThisPage">
+             Title="Kategori Detayı">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+    <Grid RowDefinitions="Auto,Auto,*" Padding="15">
 
-            <!-- Kategori Başlığı -->
-            <Label x:Name="LblBaslik" FontSize="22" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="0,10,0,10"/>
+        <!-- En Üst Başlık ve İptal Butonu -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="10,10,10,15">
+            <Label x:Name="LblBaslik" Text="Kategori Detayı" FontSize="20" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
+            <Button Text="✕ Kapat" BackgroundColor="#2A2A2A" TextColor="White" FontSize="12" CornerRadius="15" Grid.Column="1" Clicked="OnKapatClicked"/>
+        </Grid>
 
-            <!-- Kategoriye Özel Bakiye Özeti -->
-            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15">
-                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" RowSpacing="5">
-                    <Label Text="Kategori Ana Para:" TextColor="#A0A0A0" FontSize="13" Grid.Row="0" Grid.Column="0"/>
-                    <Label x:Name="LblKatAnaPara" Text="₺0" TextColor="White" FontAttributes="Bold" FontSize="15" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"/>
+        <!-- Kategoriye Özel Pasta Grafik -->
+        <Border Grid.Row="1" BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15" Margin="0,0,0,15">
+            <VerticalStackLayout Spacing="10">
+                <GraphicsView x:Name="PieGraphicsViewSub" HeightRequest="180" HorizontalOptions="Fill"/>
+                <FlexLayout x:Name="LegendContainerSub" Wrap="Wrap" JustifyContent="SpaceAround" AlignItems="Center"/>
+            </VerticalStackLayout>
+        </Border>
 
-                    <Label Text="Kategori Toplam Bakiye:" TextColor="#A0A0A0" FontSize="13" Grid.Row="1" Grid.Column="0"/>
-                    <Label x:Name="LblKatToplamBakiye" Text="₺0" TextColor="#27AE60" FontAttributes="Bold" FontSize="15" Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
-                </Grid>
-            </Border>
+        <!-- Varlık Listesi -->
+        <CollectionView x:Name="CvAltVarliklar" Grid.Row="2" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" StrokeThickness="0" Margin="0,5" Padding="15">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnVarlikGuncelleTapped"/>
+                        </Border.GestureRecognizers>
 
-            <!-- DETAY GRAFİĞİ VE LEGEND -->
-            <Label Text="Kategori İçi Dağılım Grafiği" FontSize="16" FontAttributes="Bold" TextColor="White" Margin="0,10,0,0"/>
-            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 12" StrokeThickness="0" Padding="15">
-                <VerticalStackLayout Spacing="15">
-                    <GraphicsView x:Name="SubPieGraphicsView" HeightRequest="220" HorizontalOptions="Fill"/>
-                    <FlexLayout x:Name="SubLegendContainer" Wrap="Wrap" JustifyContent="SpaceAround" AlignItems="Center"/>
-                </VerticalStackLayout>
-            </Border>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0" Spacing="3">
+                                <Label Text="{Binding AltTurOrHisse}" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                                <Label Text="{Binding Platform}" TextColor="#A0A0A0" FontSize="12"/>
+                                <Label Text="{Binding EkBilgi}" TextColor="#3498DB" FontSize="12"/>
+                            </VerticalStackLayout>
 
-            <!-- Kategori İçi Varlık Listesi (Tıklanabilir ve Güncellenebilir Yapı) -->
-            <Label Text="Detaylı Yatırım Listesi (Düzenlemek için tıklayın)" FontSize="14" FontAttributes="Bold" TextColor="#A0A0A0" Margin="0,10,0,0"/>
-            <CollectionView x:Name="CollectionViewAltVarliklar" 
-                            SelectionMode="Single" 
-                            SelectionChanged="OnVarlikSelected">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="12" Margin="0,0,0,10">
-                            <Grid ColumnDefinitions="*,Auto">
-                                <VerticalStackLayout Grid.Column="0" Spacing="2">
-                                    <Label Text="{Binding AltTurOrHisse}" TextColor="White" FontAttributes="Bold" FontSize="15"/>
-                                    <Label Text="{Binding EkBilgi}" TextColor="#A0A0A0" FontSize="12"/>
-                                </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                                <Label Text="{Binding GuncelBakiye, StringFormat='Güncel: ₺{0:N2}'}" TextColor="#27AE60" FontAttributes="Bold" FontSize="14"/>
+                                <Label Text="{Binding YatirilanAnaPara, StringFormat='Giriş: ₺{0:N2}'}" TextColor="#888888" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-                                <VerticalStackLayout Grid.Column="1" HorizontalOptions="End" Spacing="2">
-                                    <Label Text="{Binding GuncelBakiye, StringFormat='₺{0:N2}'}" TextColor="#3498DB" FontAttributes="Bold" FontSize="15" HorizontalOptions="End"/>
-                                    <Label Text="{Binding YatirilanAnaPara, StringFormat='Ana Para: ₺{0:N0}'}" TextColor="#666666" FontSize="11" HorizontalOptions="End"/>
-                                </VerticalStackLayout>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-        </VerticalStackLayout>
-    </ScrollView>
+    </Grid>
 </ContentPage>

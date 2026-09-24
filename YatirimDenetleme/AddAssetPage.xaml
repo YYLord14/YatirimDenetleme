@@ -16,15 +16,21 @@
                 <Picker x:Name="PickerAnaKategori" Title="Seçiniz..." TextColor="White" TitleColor="#666666" SelectedIndexChanged="OnAnaKategoriChanged">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
-                            <x:String>Midas (ABD Borsası / Hisse)</x:String>
-                            <x:String>Zborsa (BIST / Fon)</x:String>
-                            <x:String>Fiziksel / Nakit</x:String>
+                            <x:String>Fiziksel</x:String>
+                            <x:String>Hisse</x:String>
+                            <x:String>Katılım Bankası</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
             </Border>
 
-            <!-- 2. Aşama A: MIDAS HİSSE GİRİŞİ -->
+            <!-- 2. Aşama: Kurum / Varlık Seçimi -->
+            <Label Text="Kurum / Varlık Seçin" TextColor="#A0A0A0" FontSize="14"/>
+            <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0">
+                <Picker x:Name="PickerAltSecenek" Title="Önce yukarıdan kategori seçin" TextColor="White" TitleColor="#666666" IsEnabled="False" SelectedIndexChanged="OnAltSecenekChanged"/>
+            </Border>
+
+            <!-- 3. Aşama A: MIDAS Dolar/Hisse Girişi -->
             <VerticalStackLayout x:Name="LayoutMidas" IsVisible="False" Spacing="15">
                 <Label Text="Hisse Adı / Sembolü" TextColor="#A0A0A0" FontSize="14"/>
                 <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0" Padding="10,0">
@@ -55,9 +61,9 @@
                 </Border>
             </VerticalStackLayout>
 
-            <!-- 2. Aşama B: ZBORSA GİRİŞİ -->
+            <!-- 3. Aşama B: Banka / Hisse Girişi (Ziraat, Yapı Kredi, Kuveyt vb.) -->
             <VerticalStackLayout x:Name="LayoutZborsa" IsVisible="False" Spacing="15">
-                <Label Text="Zborsa Yatırım Türü / Stratejisi" TextColor="#A0A0A0" FontSize="14"/>
+                <Label Text="Yatırım Stratejisi / Türü" TextColor="#A0A0A0" FontSize="14"/>
                 <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0">
                     <Picker x:Name="PickerZborsaStrateji" Title="Strateji Seçiniz..." TextColor="White" TitleColor="#666666">
                         <Picker.ItemsSource>
@@ -78,22 +84,8 @@
                 </Border>
             </VerticalStackLayout>
 
-            <!-- 2. Aşama C: FİZİKSEL GİRİŞİ -->
+            <!-- 3. Aşama C: Fiziksel Varlık Girişi -->
             <VerticalStackLayout x:Name="LayoutFiziksel" IsVisible="False" Spacing="15">
-                <Label Text="Fiziksel Varlık Türü" TextColor="#A0A0A0" FontSize="14"/>
-                <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 8" StrokeThickness="0">
-                    <Picker x:Name="PickerFizikselTur" Title="Varlık Seçiniz..." TextColor="White" TitleColor="#666666" SelectedIndexChanged="OnFizikselTurChanged">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Altın</x:String>
-                                <x:String>Gümüş</x:String>
-                                <x:String>Dolar</x:String>
-                                <x:String>Euro</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
-                </Border>
-
                 <VerticalStackLayout x:Name="LayoutAdetKurHesaplama" IsVisible="False" Spacing="15">
                     <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
                         <VerticalStackLayout Grid.Column="0" Spacing="5">
@@ -134,5 +126,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

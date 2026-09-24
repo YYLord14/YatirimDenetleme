@@ -5,10 +5,8 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
-    }
 
-    protected override Window CreateWindow(IActivationState? activationState)
-    {
-        return new Window(new NavigationPage(new MainPage()));
+        // Sayfayı NavigationPage içine alıyoruz ki Modal/Push işlemleri çökmesin
+        MainPage = new NavigationPage(new MainPage());
     }
 }

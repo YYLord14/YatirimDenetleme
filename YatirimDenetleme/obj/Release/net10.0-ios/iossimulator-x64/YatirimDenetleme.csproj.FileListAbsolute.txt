@@ -2,6 +2,7 @@ C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.dll
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.pdb
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\HarfBuzzSharp.dll
+C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\HtmlAgilityPack.dll
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\LiveChartsCore.dll
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\LiveChartsCore.SkiaSharpView.dll
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\LiveChartsCore.SkiaSharpView.Maui.dll
@@ -278,6 +279,7 @@ C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot.a
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
+C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\build-signature\signature
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.csproj.AssemblyReference.cache
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\partialappmanifest\_PartialAppManifests.items
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\unpack\Microsoft.Maui.Essentials\BundleResource\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
@@ -327,6 +329,7 @@ C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.AssemblyInfoInputs.cache
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.AssemblyInfo.cs
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.sourcelink.json
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\XamlC.stamp
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimD.024393A4.Up2Date
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-ios\iossimulator-x64\YatirimDenetleme.dll

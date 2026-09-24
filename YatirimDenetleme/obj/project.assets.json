@@ -64,6 +64,19 @@
           }
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -2974,6 +2987,19 @@
           "buildTransitive/net8.0-android34.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -5694,6 +5720,19 @@
           "buildTransitive/net8.0-android34.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -8411,6 +8450,19 @@
           "buildTransitive/net8.0-android34.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -11123,6 +11175,19 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -13839,6 +13904,19 @@
           "buildTransitive/net8.0-android34.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -16551,6 +16629,19 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/HarfBuzzSharp.NativeAssets.Android.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -19293,6 +19384,19 @@
           }
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -19997,6 +20101,19 @@
           "buildTransitive/net8.0-ios17.0/HarfBuzzSharp.NativeAssets.iOS.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -20673,6 +20790,19 @@
         },
         "build": {
           "buildTransitive/net8.0-ios17.0/HarfBuzzSharp.NativeAssets.iOS.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -21358,6 +21488,19 @@
         },
         "build": {
           "buildTransitive/net8.0-ios17.0/HarfBuzzSharp.NativeAssets.iOS.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -22050,6 +22193,19 @@
           "buildTransitive/net8.0-ios17.0/HarfBuzzSharp.NativeAssets.iOS.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -22740,6 +22896,19 @@
           "buildTransitive/net8.0-ios17.0/HarfBuzzSharp.NativeAssets.iOS.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -23423,6 +23592,19 @@
           "buildTransitive/net8.0-ios17.0/HarfBuzzSharp.NativeAssets.iOS.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -24104,6 +24286,19 @@
           "runtimes/maccatalyst/native/libHarfBuzzSharp.framework.zip": {
             "assetType": "native",
             "rid": "maccatalyst"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
           }
         }
       },
@@ -24982,6 +25177,19 @@
           "buildTransitive/net8.0-maccatalyst17.0/HarfBuzzSharp.NativeAssets.MacCatalyst.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -25676,6 +25884,19 @@
           "buildTransitive/net8.0-maccatalyst17.0/HarfBuzzSharp.NativeAssets.MacCatalyst.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -26368,6 +26589,19 @@
         },
         "build": {
           "buildTransitive/net8.0-maccatalyst17.0/HarfBuzzSharp.NativeAssets.MacCatalyst.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -27065,6 +27299,19 @@
         },
         "build": {
           "buildTransitive/net8.0-maccatalyst17.0/HarfBuzzSharp.NativeAssets.MacCatalyst.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -27767,6 +28014,19 @@
           "buildTransitive/net8.0-maccatalyst17.0/HarfBuzzSharp.NativeAssets.MacCatalyst.targets": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -28462,6 +28722,19 @@
         },
         "build": {
           "buildTransitive/net8.0-maccatalyst17.0/HarfBuzzSharp.NativeAssets.MacCatalyst.targets": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -29166,6 +29439,19 @@
           "runtimes/win-x86/native/libHarfBuzzSharp.dll": {
             "assetType": "native",
             "rid": "win-x86"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
           }
         }
       },
@@ -30386,6 +30672,19 @@
           "lib/net8.0-windows10.0.19041/_._": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -31288,6 +31587,19 @@
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/_._": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -32194,6 +32506,19 @@
           "lib/net8.0-windows10.0.19041/_._": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -33098,6 +33423,19 @@
           "lib/net8.0-windows10.0.19041/_._": {}
         }
       },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
       "LiveChartsCore/2.0.5": {
         "type": "package",
         "compile": {
@@ -34000,6 +34338,19 @@
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/_._": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -34907,6 +35258,19 @@
         },
         "native": {
           "runtimes/win-x64/native/libHarfBuzzSharp.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
         }
       },
       "LiveChartsCore/2.0.5": {
@@ -35960,6 +36324,51 @@
         "runtimes/win-arm64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
+      ]
+    },
+    "HtmlAgilityPack/1.13.0": {
+      "sha512": "nWZtz9WjSbq6V7TjjYBCmW+D8+BrWs15O6MlPxh55SH4zmenkWHXwu6gYeIarHL3KoHgDyZzTdOM50EdTnR8Xw==",
+      "type": "package",
+      "path": "htmlagilitypack/1.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "htmlagilitypack.1.13.0.nupkg.sha512",
+        "htmlagilitypack.nuspec",
+        "lib/Net35/HtmlAgilityPack.dll",
+        "lib/Net35/HtmlAgilityPack.pdb",
+        "lib/Net35/HtmlAgilityPack.xml",
+        "lib/Net40-client/HtmlAgilityPack.dll",
+        "lib/Net40-client/HtmlAgilityPack.pdb",
+        "lib/Net40-client/HtmlAgilityPack.xml",
+        "lib/Net40/HtmlAgilityPack.XML",
+        "lib/Net40/HtmlAgilityPack.dll",
+        "lib/Net40/HtmlAgilityPack.pdb",
+        "lib/Net45/HtmlAgilityPack.XML",
+        "lib/Net45/HtmlAgilityPack.dll",
+        "lib/Net45/HtmlAgilityPack.pdb",
+        "lib/NetCore45/HtmlAgilityPack.XML",
+        "lib/NetCore45/HtmlAgilityPack.dll",
+        "lib/NetCore45/HtmlAgilityPack.pdb",
+        "lib/net8.0/HtmlAgilityPack.deps.json",
+        "lib/net8.0/HtmlAgilityPack.dll",
+        "lib/net8.0/HtmlAgilityPack.pdb",
+        "lib/net8.0/HtmlAgilityPack.xml",
+        "lib/netstandard2.0/HtmlAgilityPack.deps.json",
+        "lib/netstandard2.0/HtmlAgilityPack.dll",
+        "lib/netstandard2.0/HtmlAgilityPack.pdb",
+        "lib/netstandard2.0/HtmlAgilityPack.xml",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.XML",
+        "lib/uap10.0/HtmlAgilityPack.dll",
+        "lib/uap10.0/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.pri",
+        "readme.md"
       ]
     },
     "LiveChartsCore/2.0.5": {
@@ -40925,6 +41334,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-android": [
+      "HtmlAgilityPack >= 1.13.0",
       "LiveChartsCore.SkiaSharpView.Maui >= 2.0.5",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.20",
@@ -40932,6 +41342,7 @@
       "sqlite-net-pcl >= 1.11.285"
     ],
     "net10.0-ios": [
+      "HtmlAgilityPack >= 1.13.0",
       "LiveChartsCore.SkiaSharpView.Maui >= 2.0.5",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.20",
@@ -40939,6 +41350,7 @@
       "sqlite-net-pcl >= 1.11.285"
     ],
     "net10.0-maccatalyst": [
+      "HtmlAgilityPack >= 1.13.0",
       "LiveChartsCore.SkiaSharpView.Maui >= 2.0.5",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.20",
@@ -40946,6 +41358,7 @@
       "sqlite-net-pcl >= 1.11.285"
     ],
     "net10.0-windows10.0.19041.0": [
+      "HtmlAgilityPack >= 1.13.0",
       "LiveChartsCore.SkiaSharpView.Maui >= 2.0.5",
       "Microsoft.Extensions.Logging.Debug >= 10.0.0",
       "Microsoft.Maui.Controls >= 10.0.20",
@@ -41024,6 +41437,10 @@
         "framework": "net10.0-android36.0",
         "targetAlias": "net10.0-android",
         "dependencies": {
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.13.0, )"
+          },
           "LiveChartsCore.SkiaSharpView.Maui": {
             "target": "Package",
             "version": "[2.0.5, )"
@@ -41355,6 +41772,10 @@
         "framework": "net10.0-ios26.5",
         "targetAlias": "net10.0-ios",
         "dependencies": {
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.13.0, )"
+          },
           "LiveChartsCore.SkiaSharpView.Maui": {
             "target": "Package",
             "version": "[2.0.5, )"
@@ -41686,6 +42107,10 @@
         "framework": "net10.0-maccatalyst26.5",
         "targetAlias": "net10.0-maccatalyst",
         "dependencies": {
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.13.0, )"
+          },
           "LiveChartsCore.SkiaSharpView.Maui": {
             "target": "Package",
             "version": "[2.0.5, )"
@@ -42018,6 +42443,10 @@
         "framework": "net10.0-windows10.0.19041",
         "targetAlias": "net10.0-windows10.0.19041.0",
         "dependencies": {
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.13.0, )"
+          },
           "LiveChartsCore.SkiaSharpView.Maui": {
             "target": "Package",
             "version": "[2.0.5, )"

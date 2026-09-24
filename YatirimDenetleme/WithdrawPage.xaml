@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YatirimDenetleme.WithdrawPage"
+             BackgroundColor="#121212"
+             Title="Para Çek">
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="15">
+
+        <!-- Başlık ve İptal Butonu -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="10,10,10,15">
+            <Label Text="Para Çekilecek Varlık" FontSize="18" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
+            <Button Text="✕ Kapat" BackgroundColor="#2A2A2A" TextColor="White" FontSize="12" CornerRadius="15" Grid.Column="1" Clicked="OnKapatClicked"/>
+        </Grid>
+
+        <!-- Varlık Yoksa Gösterilecek Etiket -->
+        <Label x:Name="LblBosUyari" 
+               Grid.Row="1"
+               Text="Henüz eklenmiş hiç varlık gözükmüyor." 
+               TextColor="#888888" FontSize="16" 
+               HorizontalOptions="Center" VerticalOptions="Center" 
+               Margin="0,50,0,0" IsVisible="False"/>
+
+        <!-- Varlık Listesi -->
+        <CollectionView x:Name="CvVarliklar" Grid.Row="2" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="#1E1E1E" StrokeShape="RoundRectangle 10" StrokeThickness="0" Margin="0,5" Padding="15">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnVarlikTapped"/>
+                        </Border.GestureRecognizers>
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0" Spacing="3">
+                                <Label Text="{Binding AltTurOrHisse}" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                                <Label Text="{Binding Platform}" TextColor="#A0A0A0" FontSize="12"/>
+                                <Label Text="{Binding EkBilgi}" TextColor="#27AE60" FontSize="12"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                                <Label Text="{Binding GuncelBakiye, StringFormat='Güncel: ₺{0:N2}'}" TextColor="#27AE60" FontAttributes="Bold" FontSize="14"/>
+                                <Label Text="{Binding YatirilanAnaPara, StringFormat='Giriş: ₺{0:N2}'}" TextColor="#888888" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

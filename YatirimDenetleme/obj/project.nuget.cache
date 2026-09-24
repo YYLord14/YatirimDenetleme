@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "thjCRKB6cUQ=",
+  "dgSpecHash": "HJgb8NAmeOE=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\YatirimDenetleme\\YatirimDenetleme\\YatirimDenetleme.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\user\\.nuget\\packages\\harfbuzzsharp.nativeassets.ios\\8.3.1.1\\harfbuzzsharp.nativeassets.ios.8.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\harfbuzzsharp.nativeassets.maccatalyst\\8.3.1.1\\harfbuzzsharp.nativeassets.maccatalyst.8.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.1\\harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\htmlagilitypack\\1.13.0\\htmlagilitypack.1.13.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\livechartscore\\2.0.5\\livechartscore.2.0.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\livechartscore.skiasharpview\\2.0.5\\livechartscore.skiasharpview.2.0.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\livechartscore.skiasharpview.maui\\2.0.5\\livechartscore.skiasharpview.maui.2.0.5.nupkg.sha512",

@@ -2,112 +2,148 @@ namespace YatirimDenetleme;
 
 public partial class SubCategoryDetailPage : ContentPage
 {
-    private string _kategoriAdi;
     private DatabaseService _dbService;
+    private string _kategoriAdi;
+    private List<Asset> _kategoriVarliklari;
 
     public SubCategoryDetailPage(string kategoriAdi)
     {
         InitializeComponent();
-        _kategoriAdi = kategoriAdi;
         _dbService = new DatabaseService();
-        Title = $"{_kategoriAdi} Detayı";
-        LblBaslik.Text = $"{_kategoriAdi} Portföy Detayı";
+        _kategoriAdi = kategoriAdi;
+        LblBaslik.Text = $"{_kategoriAdi} Portföyü";
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        var tumVarliklar = await _dbService.GetAssetsAsync();
-        var altVarliklar = tumVarliklar.Where(v => v.AnaKategori == _kategoriAdi).ToList();
-
-        CollectionViewAltVarliklar.ItemsSource = altVarliklar;
-
-        double katAnaPara = altVarliklar.Sum(v => v.YatirilanAnaPara);
-        double katBakiye = altVarliklar.Sum(v => v.GuncelBakiye);
-
-        LblKatAnaPara.Text = $"₺{katAnaPara:N2}";
-        LblKatToplamBakiye.Text = $"₺{katBakiye:N2}";
-
-        // Detay Grafik Çizimi
-        SubPieGraphicsView.Drawable = new SubPieDrawable(altVarliklar, katAnaPara);
-        SubPieGraphicsView.Invalidate();
-        LegendOlustur(altVarliklar, katAnaPara);
+        await VerileriYukle();
     }
 
-    private void LegendOlustur(List<Asset> altVarliklar, double katAnaPara)
+    private async Task VerileriYukle()
     {
-        SubLegendContainer.Children.Clear();
-        string[] renkler = { "#E74C3C", "#3498DB", "#2ECC71", "#F1C40F", "#9B59B6", "#E67E22" };
+        var tumVarliklar = await _dbService.GetAssetsAsync();
 
-        int index = 0;
-        foreach (var v in altVarliklar)
+        // Yalnızca seçilen ana kategoriye ait olan varlıkları süz
+        _kategoriVarliklari = tumVarliklar
+            .Where(v => v.AnaKategori == _kategoriAdi)
+            .ToList();
+
+        CvAltVarliklar.ItemsSource = _kategoriVarliklari;
+
+        double toplamBakiye = _kategoriVarliklari.Sum(x => x.GuncelBakiye);
+
+        if (_kategoriVarliklari.Count > 0 && toplamBakiye > 0)
         {
-            double yuzde = katAnaPara > 0 ? (v.YatirilanAnaPara / katAnaPara) * 100 : 0;
-            string colorHex = renkler[index % renkler.Length];
+            // Alt Grafiği Çizdir
+            var altGruplar = _kategoriVarliklari
+                .GroupBy(v => string.IsNullOrEmpty(v.AltTurOrHisse) ? v.Platform : v.AltTurOrHisse)
+                .Select(g => new KategoriOzet
+                {
+                    KategoriAdi = g.Key,
+                    ToplamBakiye = g.Sum(x => x.GuncelBakiye)
+                }).ToList();
 
-            var itemStack = new HorizontalStackLayout { Spacing = 6, Margin = new Thickness(5) };
-            var box = new BoxView { Color = Microsoft.Maui.Graphics.Color.FromArgb(colorHex), WidthRequest = 14, HeightRequest = 14, CornerRadius = 3, VerticalOptions = LayoutOptions.Center };
-            var label = new Label { Text = $"{v.AltTurOrHisse} (%{yuzde:N1})", TextColor = Microsoft.Maui.Graphics.Color.FromArgb("#CCCCCC"), FontSize = 13, VerticalOptions = LayoutOptions.Center };
+            PieGraphicsViewSub.Drawable = new PieChartDrawable(altGruplar, toplamBakiye);
+            PieGraphicsViewSub.Invalidate();
 
-            itemStack.Children.Add(box);
-            itemStack.Children.Add(label);
-            SubLegendContainer.Children.Add(itemStack);
-            index++;
+            // Legend Doldur
+            LegendContainerSub.Children.Clear();
+            var renkler = PieChartDrawable.RenkPaleti;
+            int colorIndex = 0;
+
+            foreach (var item in altGruplar)
+            {
+                var renk = renkler[colorIndex % renkler.Length];
+                var itemStack = new HorizontalStackLayout { Spacing = 5, Margin = new Thickness(5) };
+                itemStack.Children.Add(new BoxView { Color = renk, WidthRequest = 10, HeightRequest = 10, VerticalOptions = LayoutOptions.Center });
+                itemStack.Children.Add(new Label { Text = $"{item.KategoriAdi} (%{(toplamBakiye > 0 ? (item.ToplamBakiye / toplamBakiye * 100) : 0):N0})", TextColor = Colors.White, FontSize = 11 });
+
+                LegendContainerSub.Children.Add(itemStack);
+                colorIndex++;
+            }
+        }
+        else
+        {
+            PieGraphicsViewSub.Drawable = null;
+            LegendContainerSub.Children.Clear();
         }
     }
 
-    // LISTEDEN BIR VARLIĞA/HISSEYE TIKLANDIĞINDA ÇALIŞACAK METOT
-    private async void OnVarlikSelected(object sender, SelectionChangedEventArgs e)
+    // Varlığa tıklanınca Güncelleme veya Silme Seçeneği Çıkar
+    private async void OnVarlikGuncelleTapped(object sender, EventArgs e)
     {
-        var secilenVarlik = e.CurrentSelection.FirstOrDefault() as Asset;
-        if (secilenVarlik == null) return;
+        var border = sender as Border;
+        var varlik = border?.BindingContext as Asset;
 
-        // Tıklama efektinden sonra seçili durumu temizle
-        ((CollectionView)sender).SelectedItem = null;
+        if (varlik == null) return;
 
-        // Detay / Güncelleme / Silme sayfasına git
-        await Navigation.PushAsync(new AssetDetailPage(secilenVarlik));
-    }
-}
+        // Kullanıcıya Ne Yapmak İstediğini Soruyoruz
+        string eylem = await DisplayActionSheet(
+            $"{varlik.AltTurOrHisse} - İşlem Seçin",
+            "İptal",
+            "🗑️ Varlığı Tamamen Sil",
+            "✏️ Güncel Fiyat / Bakiye Düzenle");
 
-public class SubPieDrawable : IDrawable
-{
-    private readonly List<Asset> _altVarliklar;
-    private readonly double _katAnaPara;
-    private readonly string[] _renkler = { "#E74C3C", "#3498DB", "#2ECC71", "#F1C40F", "#9B59B6", "#E67E22" };
-
-    public SubPieDrawable(List<Asset> altVarliklar, double katAnaPara)
-    {
-        _altVarliklar = altVarliklar;
-        _katAnaPara = katAnaPara;
-    }
-
-    public void Draw(ICanvas canvas, RectF dirtyRect)
-    {
-        if (_katAnaPara <= 0 || _altVarliklar == null || _altVarliklar.Count == 0) return;
-
-        float centerX = dirtyRect.Width / 2;
-        float centerY = dirtyRect.Height / 2;
-        float radius = Math.Min(centerX, centerY) - 15;
-
-        float startAngle = -90;
-
-        int index = 0;
-        foreach (var v in _altVarliklar)
+        if (eylem == "🗑️ Varlığı Tamamen Sil")
         {
-            float sweepAngle = (float)((v.YatirilanAnaPara / _katAnaPara) * 360);
-            string hex = _renkler[index % _renkler.Length];
+            bool onay = await DisplayAlert("Varlık Silinsin mi?",
+                $"{varlik.AltTurOrHisse} ({varlik.Platform}) varlığını portföyünüzden tamamen silmek istediğinize emin misiniz?",
+                "Evet, Sil", "Hayır");
 
-            canvas.FillColor = Microsoft.Maui.Graphics.Color.FromArgb(hex);
+            if (onay)
+            {
+                await _dbService.DeleteAssetAsync(varlik);
+                await DisplayAlert("Silindi", "Varlık başarıyla portföyünüzden kaldırıldı.", "Tamam");
+                await VerileriYukle();
+            }
+        }
+        else if (eylem == "✏️ Güncel Fiyat / Bakiye Düzenle")
+        {
+            double karZarar = varlik.GuncelBakiye - varlik.YatirilanAnaPara;
+            string durumMesaji = karZarar >= 0
+                ? $"Mevcut Kâr: +₺{karZarar:N2}"
+                : $"Mevcut Zarar: -₺{Math.Abs(karZarar):N2}";
 
-            PathF path = new PathF();
-            path.MoveTo(centerX, centerY);
-            path.AddArc(centerX - radius, centerY - radius, centerX + radius, centerY + radius, startAngle, startAngle + sweepAngle, false);
-            path.Close();
+            string yeniBakiyeStr = await DisplayPromptAsync(
+                $"{varlik.AltTurOrHisse} Güncelle",
+                $"Giriş Parası: ₺{varlik.YatirilanAnaPara:N2}\n{durumMesaji}\n\nYeni Güncel Toplam Değerini Girin (₺):",
+                "Güncelle", "İptal",
+                initialValue: varlik.GuncelBakiye.ToString(),
+                keyboard: Keyboard.Numeric);
 
-            canvas.FillPath(path);
-            startAngle += sweepAngle;
-            index++;
+            if (double.TryParse(yeniBakiyeStr, out double yeniBakiye) && yeniBakiye >= 0)
+            {
+                if (yeniBakiye == 0)
+                {
+                    bool silOnay = await DisplayAlert("Bakiye Sıfırlandı", "Bakiyeyi 0 yaptınız. Bu varlık portföyden silinsin mi?", "Evet, Sil", "Hayır, 0 Olarak Tut");
+                    if (silOnay)
+                    {
+                        await _dbService.DeleteAssetAsync(varlik);
+                        await VerileriYukle();
+                        return;
+                    }
+                }
+
+                varlik.GuncelBakiye = yeniBakiye;
+                await _dbService.UpdateAssetAsync(varlik);
+
+                double yeniKarZarar = varlik.GuncelBakiye - varlik.YatirilanAnaPara;
+                string sonDurum = yeniKarZarar >= 0
+                    ? $"+₺{yeniKarZarar:N2} kârdasınız."
+                    : $"-₺{Math.Abs(yeniKarZarar):N2} zarardasınız.";
+
+                await DisplayAlert("Başarılı", $"Varlık bakiyesi güncellendi!\n{sonDurum}", "Tamam");
+                await VerileriYukle();
+            }
+        }
+    }
+
+    private async void OnKapatClicked(object sender, EventArgs e)
+    {
+        if (Navigation != null)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }

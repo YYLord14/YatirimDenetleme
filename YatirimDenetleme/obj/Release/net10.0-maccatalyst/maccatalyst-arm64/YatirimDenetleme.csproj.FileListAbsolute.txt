@@ -296,3 +296,5 @@ C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-maccatalyst\maccatalyst-arm64\YatirimDenetleme.pdb
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-maccatalyst\maccatalyst-arm64\YatirimDenetleme.genruntimeconfig.cache
 C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-maccatalyst\maccatalyst-arm64\ref\YatirimDenetleme.dll
+C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\bin\Release\net10.0-maccatalyst\maccatalyst-arm64\HtmlAgilityPack.dll
+C:\Users\user\source\repos\YatirimDenetleme\YatirimDenetleme\obj\Release\net10.0-maccatalyst\maccatalyst-arm64\YatirimDenetleme.sourcelink.json
